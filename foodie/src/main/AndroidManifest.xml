@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="david.task.foodie.foodie">
+
+    <application>
+        <activity
+            android:name="david.task.foodie.Presenter.Home"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter android:order="1">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="task.david"
+                    android:pathPattern="/.*"
+                    android:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="david.task.foodie.Presenter.Food_Detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="david.task.foodie.Presenter.Cart_List"
+            android:theme="@style/AppTheme.NoActionBar"/>
+    </application>
+
+</manifest>

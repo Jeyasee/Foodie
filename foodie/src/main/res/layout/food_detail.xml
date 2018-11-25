@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="david.task.foodie.Presenter.Food_Detail"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:weightSum="3"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ic_arrow_white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Detail"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="bottom"
+            android:textColor="#fff"/>
+    </android.support.v7.widget.Toolbar>-->
+
+    <ScrollView
+        android:fitsSystemWindows="true"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/food_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:onClick="goBack"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/ic_arrow_black"/>
+            <View
+                android:id="@+id/splitter"
+                android:layout_below="@+id/food_image"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="15dp"
+                android:layout_height="0.1dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/food_name"
+                android:layout_below="@+id/splitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Briyani"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:id="@+id/price_container"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/food_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:id="@+id/price_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/price"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs. 200"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/splitter_2"
+                android:layout_below="@+id/price_container"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="1dp"
+                android:background="@color/light_transparant"/>
+
+            <TextView
+                android:id="@+id/quanity_label"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/splitter_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginBottom="25dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Add Quantity"/>
+
+
+            <LinearLayout
+                android:id="@+id/add_quanity_container"
+                android:layout_below="@+id/quanity_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="25dp"
+                android:gravity="center_horizontal|center_vertical">
+                <TextView
+                    android:id="@+id/decrease_count"
+                    android:onClick="decrease_count"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:text="-"
+                    android:textSize="20sp"
+                    android:layout_marginRight="35dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:fontFamily="@font/prostoon_regular"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/circle"/>
+                <TextView
+                    android:id="@+id/food_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:onClick="increase_count"
+                    android:id="@+id/increase_count"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:text="+"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:fontFamily="@font/prostoon_regular"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/circle"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:onClick="addCart"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#8000"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/food_total_items"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@android:color/white"/>
+                <TextView
+                    android:id="@+id/food_total_price"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="25dp"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#8000">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="Added 0 item to card"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="0"/>
+    </RelativeLayout>-->
+</LinearLayout>
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="david.task.foodie.Presenter.Food_Detail">
+
+</android.support.constraint.ConstraintLayout>-->

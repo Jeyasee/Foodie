@@ -1,0 +1,1 @@
+include ':foodie', ':app', ':base', ':instantapp'

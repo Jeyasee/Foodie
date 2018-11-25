@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="david.task.foodie.Presenter.Cart_List">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="20dp"
+            android:onClick="backArrow"
+            android:background="@drawable/ic_arrow_white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cart"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="bottom"
+            android:textColor="#fff"/>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+        <LinearLayout
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:layout_weight="1"
+                android:id="@+id/cart_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="false">
+
+            </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:background="#8000"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/food_total_items"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:text="Total Price"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@android:color/white"/>
+                <TextView
+                    android:id="@+id/food_total_price"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="25dp"
+                    android:text="Rs. 1520"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentRight="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

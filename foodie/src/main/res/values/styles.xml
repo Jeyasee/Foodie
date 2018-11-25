@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="no_Action_Bar" parent="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="food_image">
+        <item name="android:padding">5dp</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+    <style name="food_name">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="food_price">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:layout_alignLeft">@+id/food_name</item>
+
+    </style>
+</resources>
